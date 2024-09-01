@@ -25,7 +25,7 @@ class CreditService(private val creditRepository: CreditRepository) {
     }
 
     @Transactional
-    @DistributedLock(key = "'changeAmount'.concat('-').concat(#userId)", waitTime = 10, leaseTime = 3)
+    @DistributedLock(key = "'changeAmountAll'.concat('-').concat(#userId)", waitTime = 10, leaseTime = 3)
     fun changeAmountWith천천히라도_처리(userId: String, amount: Int): BigDecimal {
         val findById = creditRepository.findById(userId)
         if (findById.isEmpty) {
@@ -40,7 +40,7 @@ class CreditService(private val creditRepository: CreditRepository) {
     }
 
     @Transactional
-    @DistributedLock(key = "'changeAmount'.concat('-').concat(#userId)", waitTime = -1, leaseTime = 3)
+    @DistributedLock(key = "'changeAmountJustOne'.concat('-').concat(#userId)", waitTime = -1, leaseTime = 3)
     fun changeAmountWith따닥방지(userId: String, amount: Int): BigDecimal {
         val findById = creditRepository.findById(userId)
         if (findById.isEmpty) {

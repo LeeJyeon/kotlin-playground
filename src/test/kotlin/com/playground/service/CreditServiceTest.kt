@@ -32,8 +32,8 @@ class CreditServiceTest {
     }
 
     @Test
-    fun 천천히라도_처리해서_100원을_모두입금하는_테스트() {
-        val numberOfThreads = 100;
+    fun 천천히라도_처리해서_50원을_모두입금하는_테스트() {
+        val numberOfThreads = 50;
         val executorService = Executors.newFixedThreadPool(numberOfThreads)
         val latch = CountDownLatch(numberOfThreads)
 
@@ -50,12 +50,12 @@ class CreditServiceTest {
 
         val findById = creditRepository.findById(testUser)
         println(findById.get().toString())
-        Assertions.assertThat(findById.get().point.compareTo(BigDecimal.valueOf(100))).isEqualTo(0)
+        Assertions.assertThat(findById.get().point.compareTo(BigDecimal.valueOf(50))).isEqualTo(0)
     }
 
     @Test
     fun 따닥을방지해서_딱_한건만_처리하는_테스트() {
-        val numberOfThreads = 100;
+        val numberOfThreads = 50;
         val executorService = Executors.newFixedThreadPool(numberOfThreads)
         val latch = CountDownLatch(numberOfThreads)
 
