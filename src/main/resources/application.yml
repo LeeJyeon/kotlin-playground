@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/playground?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 150
+      maximum-pool-size: 150
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org:
+      springframework:
+        transaction: debug
+      hibernate:
+        type:
+          descriptor:
+            sql: debug
