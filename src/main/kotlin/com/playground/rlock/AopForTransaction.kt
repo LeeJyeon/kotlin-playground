@@ -9,7 +9,8 @@ import org.springframework.transaction.annotation.Transactional
 @Component
 class AopForTransaction {
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+//    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    // 따닥 사용용도로는 Tx 묶을 필요가 없음
     @Throws(Throwable::class)
     fun proceed(joinPoint: ProceedingJoinPoint): Any? {
         return joinPoint.proceed()
