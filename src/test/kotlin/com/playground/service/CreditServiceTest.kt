@@ -5,6 +5,7 @@ import com.playground.repository.CreditRepository
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -53,7 +54,7 @@ class CreditServiceTest {
         Assertions.assertThat(findById.get().point.compareTo(BigDecimal.valueOf(50))).isEqualTo(0)
     }
 
-    @Test
+    @RepeatedTest(10)
     fun 따닥을방지해서_딱_한건만_처리하는_테스트() {
         val numberOfThreads = 50;
         val executorService = Executors.newFixedThreadPool(numberOfThreads)
