@@ -1,19 +1,14 @@
 package com.playground.service
 
 import com.playground.entity.Credit
-import com.playground.repository.CreditRepository
-import org.assertj.core.api.Assertions
+import com.playground.repository.jpa.CreditRepository
 import org.assertj.core.api.Assertions.*
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.RepeatedTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
 import java.math.BigDecimal
-import java.util.concurrent.CountDownLatch
-import java.util.concurrent.Executors
 
 
 @SpringBootTest

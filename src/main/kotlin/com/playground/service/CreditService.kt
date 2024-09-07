@@ -1,7 +1,7 @@
 package com.playground.service
 
 import com.playground.entity.Credit
-import com.playground.repository.CreditRepository
+import com.playground.repository.jpa.CreditRepository
 import com.playground.utility.rlock.DistributedLock
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service

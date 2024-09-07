@@ -18,11 +18,21 @@ spring:
       host: localhost
       port: 6379
 
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: credit
+
 logging:
   level:
     org:
       springframework:
         transaction: debug
+        data:
+          mongodb.core.MongoTemplate: DEBUG
       hibernate:
         type:
           descriptor:

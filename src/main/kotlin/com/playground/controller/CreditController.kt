@@ -1,17 +1,14 @@
 package com.playground.controller
 
+import com.playground.repository.document.ReceiptRepository
 import com.playground.service.CreditService
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.math.BigDecimal
 
 @RequestMapping
 @RestController
-class CreditController(private val creditService: CreditService) {
+class CreditController(private val creditService: CreditService, private val receiptRepository: ReceiptRepository) {
+
 
     @PostMapping("/credit/{userId}")
     fun createNewCredit(@PathVariable userId: String) {

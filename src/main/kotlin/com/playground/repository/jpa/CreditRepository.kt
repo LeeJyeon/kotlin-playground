@@ -1,4 +1,4 @@
-package com.playground.repository
+package com.playground.repository.jpa
 
 import com.playground.entity.Credit
 import jakarta.persistence.LockModeType
