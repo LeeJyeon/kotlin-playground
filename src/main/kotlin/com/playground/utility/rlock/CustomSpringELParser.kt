@@ -1,4 +1,4 @@
-package com.playground.rlock
+package com.playground.utility.rlock
 
 import org.springframework.expression.ExpressionParser
 import org.springframework.expression.spel.standard.SpelExpressionParser

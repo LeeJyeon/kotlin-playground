@@ -1,4 +1,4 @@
-package com.playground.rlock
+package com.playground.utility.rlock
 
 import lombok.extern.slf4j.Slf4j
 import org.aspectj.lang.ProceedingJoinPoint
@@ -24,7 +24,7 @@ class DistributedLockAop(
     private val log = LoggerFactory.getLogger(DistributedLockAop::class.java)
 
 
-    @Around("@annotation(com.playground.rlock.DistributedLock)")
+    @Around("@annotation(com.playground.utility.rlock.DistributedLock)")
     @Throws(Throwable::class)
     fun lock(joinPoint: ProceedingJoinPoint): Any? {
         val signature = joinPoint.signature as MethodSignature

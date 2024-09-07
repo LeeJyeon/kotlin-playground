@@ -2,7 +2,7 @@ package com.playground.service
 
 import com.playground.entity.Credit
 import com.playground.repository.CreditRepository
-import com.playground.rlock.DistributedLock
+import com.playground.utility.rlock.DistributedLock
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

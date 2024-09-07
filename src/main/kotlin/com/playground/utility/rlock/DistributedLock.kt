@@ -1,4 +1,4 @@
-package com.playground.rlock
+package com.playground.utility.rlock
 
 import java.lang.annotation.ElementType
 import java.util.concurrent.TimeUnit

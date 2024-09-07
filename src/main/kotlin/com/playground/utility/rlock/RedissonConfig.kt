@@ -1,4 +1,4 @@
-package com.playground.rlock
+package com.playground.utility.rlock
 
 import org.redisson.Redisson
 import org.redisson.api.RedissonClient
