@@ -26,10 +26,14 @@ spring:
       password: rootpass
       database: credit
 
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
 application:
   feign-url:
     fakeApi: localhost:3000
-
 
 logging:
   level:
@@ -43,6 +47,22 @@ logging:
           descriptor:
             sql: debug
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 10
+        wait-duration-in-open-state: 10000
+        failure-rate-threshold: 50
+        event-consumer-buffer-size: 10
+        register-health-indicator: true
+
+    instances:
+      testCircuit:
+        base-config: default
+        minimum-number-of-calls: 1
+        wait-duration-in-open-state: 5000
 ---
 spring:
   config:
