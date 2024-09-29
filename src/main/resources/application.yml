@@ -26,6 +26,11 @@ spring:
       password: rootpass
       database: credit
 
+application:
+  feign-url:
+    fakeApi: localhost:3000
+
+
 logging:
   level:
     org:

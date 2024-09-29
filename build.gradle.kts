@@ -25,6 +25,9 @@ repositories {
     mavenCentral()
 }
 
+extra["springCloudVersion"] = "2023.0.3"
+
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.redisson:redisson-spring-boot-starter:3.16.4")
@@ -33,6 +36,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.slf4j:slf4j-api:2.0.0")
     implementation ("org.springframework.boot:spring-boot-starter-data-mongodb")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")
@@ -40,7 +44,12 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.slf4j:slf4j-api:2.0.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    }
 }
 
 kotlin {
