@@ -3,8 +3,6 @@ package com.playground.controller
 import com.playground.client.FakeApi
 import com.playground.client.body.FakeResponse
 import com.playground.client.exception.ClientException
-import com.playground.service.CreditService
-import lombok.extern.slf4j.Slf4j
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
