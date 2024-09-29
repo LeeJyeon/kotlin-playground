@@ -42,3 +42,13 @@ logging:
         type:
           descriptor:
             sql: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+application:
+  feign-url:
+    fakeApi: localhost:${wiremock.server.port}
