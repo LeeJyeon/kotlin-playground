@@ -14,6 +14,6 @@ import kotlin.jvm.Throws
 interface FakeApi {
 
     @Throws(ClientException::class)
-    @GetMapping("/{type}", consumes = ["application/json"])
+    @GetMapping("/{type}")
     fun getSample(@PathVariable type: String): FakeResponse
 }
